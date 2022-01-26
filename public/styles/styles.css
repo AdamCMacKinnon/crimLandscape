@@ -3,21 +3,42 @@
     background-color: white;
     overflow: hidden;
 }
-
 body {
     background-image: url("/images/grass.jpeg");
 }
-
 .logo {
     height: 200px;
 }
-
 #navBar {
-    background-color: rgb(201, 199, 199);
-    display: flex;
-    justify-content: space-between;
+    background-color: rgb(224, 218, 218);
 }
 .nav-item {
+    font-weight: bold;
+}
+.nav-link {
+    color: forestgreen;
+}
+.card-deck {
+    margin-top: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.card {
+    background-color: rgb(224, 218, 218);
+    box-shadow: 2px 5px;
+}
+.card-img-top {
+    height: 300px;
+    overflow:hidden;
+}
+.card:hover {
+    background-color: lightgray;
+}
+.cardLink {
+    color: black;
+}
+.cardLink:hover {
+    text-decoration: none;
     color: forestgreen;
 }
 
