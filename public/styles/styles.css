@@ -1,0 +1,23 @@
+.header {
+    height: 200px;
+    background-color: white;
+    overflow: hidden;
+}
+
+body {
+    background-image: url("/images/grass.jpeg");
+}
+
+.logo {
+    height: 200px;
+}
+
+#navBar {
+    background-color: rgb(201, 199, 199);
+    display: flex;
+    justify-content: space-between;
+}
+.nav-item {
+    color: forestgreen;
+}
+
