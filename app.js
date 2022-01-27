@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.static('public'));
 
 app.use(require('./routes/index'));
+app.use(require('./routes/contact'));
 
 app.get('/', (req,res) => {
   res.render('index')

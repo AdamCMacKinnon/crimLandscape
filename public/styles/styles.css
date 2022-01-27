@@ -42,3 +42,9 @@ body {
     color: forestgreen;
 }
 
+.contact {
+    margin-top: 60px;
+    background-color: forestgreen;
+    padding: 25px;
+    border-radius: 10%;
+}

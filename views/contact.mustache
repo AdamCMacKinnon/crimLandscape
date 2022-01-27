@@ -1,4 +1,41 @@
 {{> header}}
-
+    {{> nav}}
+    <form class="contact col-6 offset-3">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email Address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="serviceSelect">What Can we Help You With?</label>
+          <select class="form-control" id="serviceSelect">
+            <option>Lawn Mowing</option>
+            <option>Cleanup</option>
+            <option>Mulching</option>
+            <option>Landscaping/Design</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="city...">
+            </div>
+            <div class="form-group col-md-4 offset-2">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>DE</option>
+                <option>MD</option>
+                <option>PA</option>
+                <option>NJ</option>
+              </select>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1"></label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Comments that will help us better serve you"></textarea>
+        </div><br>
+        <button type="submit" class="btn btn-warning">Submit</button>&emsp;<span class="text-muted"><i>We won't share your info with anyone</i></span>
+      </form>
 
 {{> footer}}
