@@ -1,9 +1,9 @@
 {{> header}}
     {{> nav}}
-    <form class="contact col-6 offset-3">
+    <form id="contactForm" class="contact col-6 offset-3">
         <div class="form-group">
           <label for="exampleFormControlInput1">Email Address</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          <input type="email" class="form-control" id="email" placeholder="name@example.com">
         </div>
         <div class="form-group">
           <label for="serviceSelect">What Can we Help You With?</label>
@@ -33,9 +33,10 @@
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea1"></label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Comments that will help us better serve you"></textarea>
+          <textarea class="form-control" id="comments" rows="3" placeholder="Comments that will help us better serve you"></textarea>
         </div><br>
         <button type="submit" class="btn btn-warning">Submit</button>&emsp;<span class="text-muted"><i>We won't share your info with anyone</i></span>
       </form>
 
+      <script src="/js/formLogic.js"></script>
 {{> footer}}

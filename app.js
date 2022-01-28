@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mustacheExpress = require('mustache-express');
 const path = require('path');
+require('dotenv').config();
 const PORT = 3000;
 
 
