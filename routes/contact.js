@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 router.use(express.json());
 const nodemailer = require('nodemailer');
-// const { emailComp, passwordEmail } = require('../public/js/config');
 
 
 router.get('/contact', (req,res) => {
@@ -20,21 +19,13 @@ router.post('/contact', (req,res) =>{
         }
     })
 
-    const mailOptions = {
+
+    transporter.sendMail({
         from: req.body.email,
         to: process.env.EMAIL_COMP,
-        subject: `Crim Lawn Service: ${req.body.service}`,
-        text: req.body.comments
-    }
-    transporter.sendMail(mailOptions, (error, info) => {
-        if(error) {
-            res.send('error sending mail');
-            console.log(error);
-        } else {
-            res.send('success!');
-            console.log(info.response);
-            res.send('successfully sent mail')
-        }
+        subject: req.body.service,
+        text: `Looking for service in ${req.body.city},${req.body.state}\n
+        <b>Customer comments:</b> ${req.body.comments}`
     })
 })
 

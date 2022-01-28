@@ -28,7 +28,7 @@ contactForm.addEventListener('submit', (e)=>{
            state.value = '';
            comments.value = '';
        } else {
-           alert('ERROR IT FAILED!!')
+            console.log('error')
        }
    }
 
