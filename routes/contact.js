@@ -19,16 +19,14 @@ router.post('/contact', (req,res) =>{
         }
     })
 
-
     transporter.sendMail({
-        from: req.body.email,
+        from: process.env.EMAIL_COMP,
         to: process.env.EMAIL_COMP,
-        subject: req.body.service,
+        subject: `${req.body.service} in ${req.body.city},${req.body.state}`,
         text: `Looking for service in ${req.body.city},${req.body.state}\n
-        <b>Customer comments:</b> ${req.body.comments}`
+        Customer Email: ${req.body.email}\n
+        Customer comments: ${req.body.comments}`
     })
 })
-
-
 
 module.exports = router;
