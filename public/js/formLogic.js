@@ -10,6 +10,7 @@ contactForm.addEventListener('submit', (e)=>{
     
     let formData = {
         email: email.value,
+        phone: phone.value,
         service: service.value,
         city: city.value,
         state: state.value,
@@ -23,6 +24,7 @@ contactForm.addEventListener('submit', (e)=>{
        if(xhr.responseText == 'success') {
            alert('email sent');
            email.value = '';
+           phone.value = ''
            service.value = '';
            city.value = '';
            state.value = '';

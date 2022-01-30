@@ -25,7 +25,8 @@ router.post('/contact', (req,res) =>{
         to: process.env.EMAIL_COMP,
         subject: req.body.service,
         text: `Looking for service in ${req.body.city},${req.body.state}\n
-        <b>Customer comments:</b> ${req.body.comments}`
+        Phone Number: ${req.body.phone}
+        Customer comments: ${req.body.comments}`
     })
 })
 

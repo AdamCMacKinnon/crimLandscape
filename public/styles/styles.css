@@ -41,7 +41,12 @@ body {
     text-decoration: none;
     color: rgb(3, 88, 3);
 }
-
+.card-title {
+    text-align: center;
+}
+.card-text {
+    text-align: center;
+}
 .contact {
     margin-top: 60px;
     background-color: rgb(1, 73, 1);
