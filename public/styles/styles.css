@@ -22,6 +22,7 @@ body {
     margin-top: 80px;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 20px;
 }
 .card {
     background-color: rgb(224, 218, 218);
@@ -56,4 +57,23 @@ body {
 }
 .nav-link:hover {
     color: black;
+}
+#callUs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comingSoon {
+    margin-top: 100px;
+    background-color: rgb(1, 73, 1);
+    color: white;
+    padding: 25px;
+    border-radius: 10%;
+    width: 50%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
 }

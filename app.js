@@ -18,6 +18,7 @@ app.use(express.static('public'));
 app.use(require('./routes/index'));
 app.use(require('./routes/contact'));
 app.use(require('./routes/services'));
+app.use(require('./routes/portfolio'));
 
 app.get('/', (req,res) => {
   res.render('index')
