@@ -3,7 +3,7 @@ const app = express();
 const mustacheExpress = require('mustache-express');
 const path = require('path');
 require('dotenv').config();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 const VIEWS_PATH = path.join(__dirname,'/views');
