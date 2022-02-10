@@ -12,7 +12,9 @@ router.post('/contact', (req,res) =>{
     console.log(req.body);
 
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: 'smtp.mail.yahoo.com',
+        port: 2525,
+        secure: true,
         auth: {
             user: process.env.EMAIL_COMP,
             pass: process.env.COMP_PASS

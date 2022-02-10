@@ -8,6 +8,8 @@ let comments = document.getElementById('comments');
 contactForm.addEventListener('submit', (e)=>{
     e.preventDefault();
     
+    alert("Thank you for your Submission!  We will be in Touch Soon!");
+    
     let formData = {
         email: email.value,
         phone: phone.value,
