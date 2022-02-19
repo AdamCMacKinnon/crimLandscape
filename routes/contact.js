@@ -1,7 +1,8 @@
 const express = require('express');
+const email = require('emailjs');
+const { gmailServiceId, gmailTemplate } = require('../public/js/config');
 const router = express.Router();
 router.use(express.json());
-const nodemailer = require('nodemailer');
 
 
 router.get('/contact', (req,res) => {
@@ -11,24 +12,18 @@ router.get('/contact', (req,res) => {
 router.post('/contact', (req,res) =>{
     console.log(req.body);
 
-    const transporter = nodemailer.createTransport({
-        service: 'smtp.mail.yahoo.com',
-        port: 2525,
-        secure: true,
-        auth: {
-            user: process.env.EMAIL_COMP,
-            pass: process.env.COMP_PASS
-        }
-    })
+    const sendParams = {
+        name: 'Crim Lawn and Landscape',
+        notes: 'Customer Request'
+    }
 
-    transporter.sendMail({
-        from: process.env.EMAIL_COMP,
-        to: process.env.EMAIL_COMP,
-        subject: `${req.body.service} in ${req.body.city},${req.body.state}`,
-        text: `Looking for service in ${req.body.city},${req.body.state}\n
-        Phone Number: ${req.body.phone}
-        Customer comments: ${req.body.comments}`
-    })
+    email.send(`${gmailServiceId}, ${gmailTemplate}`,sendParams)
+    .then(function(res) {
+        console.log('SUCCESS!', res.status, res.text);
+    }, function(error) {
+        console.log('FAILED', error)
+    });
+
 })
 
 module.exports = router;
