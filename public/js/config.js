@@ -1,2 +1,2 @@
-const emailComp = 'adamcmackdev@gmail.com';
-const passwordEmail = 'Bravos115!';
+// username verification for EmailJS client
+export const emailJsUser = "user_B6HNbc8ZzOAY8fG06ZJeJ"
