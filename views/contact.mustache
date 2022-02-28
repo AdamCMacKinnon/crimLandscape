@@ -3,7 +3,7 @@
     <div class="alert alert-success" id="callUs"role="alert">
       <b>Call us Today! (302) 743-0040</b>
     </div>
-    <form id="contactForm" class="contact col-6 offset-3">
+    <form id="contactForm" class="contact col-6 offset-3" method="POST">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="exampleFormControlInput1">Email Address</label>
@@ -45,8 +45,11 @@
           <label for="exampleFormControlTextarea1"></label>
           <textarea class="form-control" id="comments" rows="3" placeholder="Please leave your phone number and a description of how we can help you."></textarea>
         </div><br>
-        <button type="submit" class="btn btn-warning">Submit</button>&emsp;<span class="text-muted"><i>We won't share your info with anyone</i></span>
+        <button type="submit" id="submitButton" class="btn btn-warning">Submit</button>&emsp;<span class="text-muted"><i>We won't share your info with anyone</i></span>
+        {{#message}}
+        <div class="alert alert-danger">
+          {{message}}
+        </div>
+        {{/message}}
       </form>
-
-      <script src="/js/formLogic.js"></script>
 {{> footer}}
