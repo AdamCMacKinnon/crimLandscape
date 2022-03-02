@@ -1,34 +1,39 @@
 const express = require('express');
 const router = express.Router();
 router.use(express.json());
-const nodemailer = require('nodemailer');
-
+const models = require('../models');
 
 router.get('/contact', (req,res) => {
   res.render('contact');
 });
 
 router.post('/contact', (req,res) =>{
-    console.log(req.body);
+    let email = req.body.email
+    let phone = req.body.phone
+    let service = req.body.service
+    let city = req.body.city
+    let state = req.body.state
+    let comment = req.body.comment
 
-    const transporter = nodemailer.createTransport({
-        service: 'smtp.mail.yahoo.com',
-        port: 2525,
-        secure: true,
-        auth: {
-            user: process.env.EMAIL_COMP,
-            pass: process.env.COMP_PASS
+    models.contact.build({
+        email: email,
+        phone: phone,
+        service: service,
+        city: city,
+        state: state,
+        comment: comment
+    })
+    .save()
+    .then(function(newClient) {
+        if (newClient.email && newClient.phone != null) {
+            res.render('index', { message: 'Thank you for your inquiry!  Please give us up to 24 hours to respond.' })
+        } else {
+            res.render('/contact', { message: 'We need a way to get in touch with you!  Make sure to leave a phone number or email!' })
         }
+    }).catch(function(error) {
+        console.log(error)
     })
 
-    transporter.sendMail({
-        from: process.env.EMAIL_COMP,
-        to: process.env.EMAIL_COMP,
-        subject: `${req.body.service} in ${req.body.city},${req.body.state}`,
-        text: `Looking for service in ${req.body.city},${req.body.state}\n
-        Phone Number: ${req.body.phone}
-        Customer comments: ${req.body.comments}`
-    })
 })
 
 module.exports = router;

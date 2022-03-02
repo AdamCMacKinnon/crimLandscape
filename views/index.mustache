@@ -1,9 +1,11 @@
 {{> header}}
 {{> nav}}
 <body>
-  {{! <div class="alert alert-success" id="callUs"role="alert">
-    <b>For Quotes: <a href="mailto:crimslawnandlandscape@gmail.com">Email Us</a> or Call! (302) 743-0040</b>
-  </div> }}
+  {{#message}}
+  <div class="alert alert-success" role="alert" style="text-align: center;">
+      {{message}}
+  </div>
+  {{/message}}
     <div class="col-10 mt-4 offset-1 slogan">
       <div class="col-lg-6 offset-lg-3">
         <div class="sloganBackground p-lg-3 p-4">
