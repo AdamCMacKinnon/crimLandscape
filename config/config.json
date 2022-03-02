@@ -11,6 +11,6 @@
     "password": "TEeIOA16MtFFUCwWuh8FBXzty8xjws1G",
     "database": "znppairt",
     "host": "postgres://znppairt:TEeIOA16MtFFUCwWuh8FBXzty8xjws1G@jelani.db.elephantsql.com/znppairt",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }
