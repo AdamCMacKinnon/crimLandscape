@@ -46,6 +46,12 @@
           <textarea class="form-control" name="comment" id="comments" rows="3" placeholder="Please leave your phone number and a description of how we can help you."></textarea>
         </div><br>
         <button type="submit" class="btn btn-warning">Submit</button>&emsp;<span class="text-muted"><i>We won't share your info with anyone</i></span>
+        <br>
+        {{#message}}
+        <div class="alert alert-danger" role="alert">
+            {{message}}
+        </div>
+        {{/message}}
       </form>
 
 {{> footer}}

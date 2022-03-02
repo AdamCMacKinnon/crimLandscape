@@ -15,7 +15,7 @@ router.post('/contact', (req,res) =>{
     let state = req.body.state
     let comment = req.body.comment
 
-    models.contact.build({
+    let client = models.contact.build({
         email: email,
         phone: phone,
         service: service,
@@ -23,17 +23,17 @@ router.post('/contact', (req,res) =>{
         state: state,
         comment: comment
     })
-    .save()
-    .then(function(newClient) {
-        if (newClient.email && newClient.phone != null) {
+    if (client.email && client.phone != null) {
+        client.save()
+        .then(function(newClient) {
             res.render('index', { message: 'Thank you for your inquiry!  Please give us up to 24 hours to respond.' })
-        } else {
-            res.render('/contact', { message: 'We need a way to get in touch with you!  Make sure to leave a phone number or email!' })
-        }
-    }).catch(function(error) {
-        console.log(error)
-    })
-
+        }).catch(function(error) {
+            console.log(error)
+            res.render('index', { message: 'There was an ERROR with your request!  Please give us a call!' })
+        })
+    } else {
+        res.render('contact', { message: 'We need a way to get in touch with you!  Make sure to leave a phone number or email!' })
+    }
 })
 
 module.exports = router;
