@@ -1,31 +1,56 @@
 {{> header}}
 {{> nav}}
 <body>
-  <div class="alert alert-success" id="callUs"role="alert">
-    <b>For Quotes: <a href="mailto:crimslawnandlandscape@gmail.com">Email Us</a> or Call! (302) 743-0040</b>
+  {{#message}}
+  <div class="alert alert-success" role="alert" style="text-align: center;">
+      {{message}}
   </div>
-    <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="/images/layingSod.jpeg" alt="Card image cap">
-          <a href="/services" class="cardLink"><div class="card-body">
-            <h5 class="card-title">Services</h5>
-            <p class="card-text">Take a Look at What We Offer</p></a>
+  {{/message}}
+    <div class="col-10 mt-4 offset-1 slogan">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="sloganBackground p-lg-3 p-4">
+          <p class="sloganText">Reclaim your weekends!</p>
+          <p class="sloganText2">Leave the work to us.</p>
+        </div>
+      </div>
+    </div>
+    {{! end of slogan div }}
+
+    <div class="card-deck row">
+    
+        <div class="col-lg-4 col-md-9 offset-md-1 offset-lg-0 mb-md-3">
+          <div class="card w-100">
+            <img class="card-img-top" src="/images/layingSod.jpeg" alt="Card image cap">
+            <a href="/services" class="cardLink"><div class="card-body">
+              <h5 class="card-title">Services</h5>
+              <p class="card-text">Take a Look at What We Offer</p></a>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="/images/bluehouse.jpeg" alt="Card image cap">
-          <a href="/portfolio" class="cardLink"><div class="card-body">
-            <h5 class="card-title">Portfolio</h5>
-            <p class="card-text">See some of our work!</p></a>
+        {{! end of card 1 }}
+
+        <div class="col-lg-4 col-md-9 offset-md-1 offset-lg-0 mb-md-3">
+          <div class="card w-100">
+            <img class="card-img-top" src="/images/bluehouse.jpeg" alt="Card image cap">
+            <a href="/portfolio" class="cardLink"><div class="card-body">
+              <h5 class="card-title">Portfolio</h5>
+              <p class="card-text">See some of our work!</p></a>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="/images/handshake.jpeg" alt="Card image cap">
-          <a class="cardLink" href="mailto: crimslawnandlandscape@gmail.com"><div class="card-body">
-            <h5 class="card-title">How can We Help You?</h5>
-            <p class="card-text">Get a Quote Today!</p></a>
+        {{! end of card 2 }}
+
+        <div class="col-lg-4 col-md-9 offset-md-1 offset-lg-0 mb-md-3">
+          <div class="card w-100">
+            <img class="card-img-top" src="/images/handshake.jpeg" alt="Card image cap">
+            <a class="cardLink" href="mailto: crimslawnandlandscape@gmail.com"><div class="card-body">
+              <h5 class="card-title">How can we help you?</h5>
+              <p class="card-text">Get a Quote Today!</p></a>
+            </div>
           </div>
         </div>
+        {{! end of card 3 }}
+
       </div>
 
 
