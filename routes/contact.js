@@ -28,8 +28,8 @@ router.post('/contact', (req,res) =>{
         .then(function(newClient) {
             res.render('index', { message: 'Thank you for your inquiry!  Please give us up to 24 hours to respond.' })
         }).catch(function(error) {
-            console.log(error)
             res.render('index', { message: 'There was an ERROR with your request!  Please give us a call!' })
+            console.trace(error)
         })
     } else {
         res.render('contact', { message: 'We need a way to get in touch with you!  Make sure to leave a phone number or email!' })
