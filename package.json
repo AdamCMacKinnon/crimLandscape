@@ -6,8 +6,10 @@
   "scripts": {
     "test": "npm run test",
     "start": "node app.js",
+    "local": "nodemon app.js",
     "prod": "set NODE_ENV=production && node app.js",
-    "migrate": "sequelize db:migrate"
+    "migrate": "sequelize db:migrate",
+    "deploy": "git push heroku main"
   },
   "author": "Adam C. MacKinnon",
   "license": "ISC",
@@ -20,6 +22,7 @@
     "font-awesome": "^4.7.0",
     "mustache-express": "^1.3.2",
     "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15",
     "pg": "^8.7.3",
     "sequelize": "^6.17.0",
     "sequelize-cli": "^6.2.0"
