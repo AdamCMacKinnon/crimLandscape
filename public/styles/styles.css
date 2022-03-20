@@ -231,3 +231,11 @@ body {
     align-items: center;
     font-size: 50px;
 }
+
+.loginForm {
+    margin-top: 100px;
+    background-color: rgb(1, 73, 1);
+    color: white;
+    padding: 25px;
+    border-radius: 10%;
+}

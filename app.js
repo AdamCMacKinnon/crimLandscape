@@ -11,14 +11,17 @@ app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials','.mustache'));
 app.set('views', VIEWS_PATH);
 app.set('view engine','mustache');
 
+
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(express.static('public'));
 
+const adminRoutes = require('./routes/login');
 app.use(require('./routes/index'));
 app.use(require('./routes/contact'));
 app.use(require('./routes/services'));
 app.use(require('./routes/portfolio'));
+app.use(require('./routes/login', adminRoutes));
 
 app.get('/', (req,res) => {
   res.render('index')
