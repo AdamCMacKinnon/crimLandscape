@@ -27,6 +27,7 @@ router.post('/contact', (req,res) =>{
         client.save()
         .then(function(newClient) {
             res.render('index', { message: 'Thank you for your inquiry!  Please give us up to 24 hours to respond.' })
+            console.log(newClient)
         }).catch(function(error) {
             res.render('index', { message: 'There was an ERROR with your request!  Please give us a call!' })
             console.trace(error)
