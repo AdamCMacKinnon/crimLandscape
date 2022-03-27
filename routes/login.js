@@ -23,7 +23,7 @@ router.post('/admin/login', async (req,res) => {
           req.session.admin = { userName: user }
           res.redirect('/admin/dashboard');
         } else {
-          res.render('/admin/login', { message: "Credentials Do Not Match!"})
+          res.render('login', { message: "Credentials Do Not Match!"})
         }
       }
     })

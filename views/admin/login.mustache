@@ -1,6 +1,6 @@
 {{> header}}
 
-<form class="loginForm col-6 offset-3" id="loginForm" action="" method="post">
+<form class="loginForm col-6 offset-3" id="loginForm" action="admin" method="post">
     <div class="form-group">
         <h1 style="text-align: center;">ADMIN LOGIN</h1>
         <label for="userName">User Name</label>
@@ -10,7 +10,7 @@
         <label for="exampleInputPassword1">Password</label>
         <input type="password" name="password" class="form-control" id="adminPassword" placeholder="Password">
       </div>
-      <button type="submit" class="btn btn-warning">Submit</button>
+      <button type="submit" id="loginForm" class="btn btn-warning">Submit</button>
     </form>
 
     {{#message}}
@@ -19,4 +19,12 @@
     </div>
     {{/message}}
 
+    {{! <script>
+      let loginForm = document.getElementById('loginForm');
+
+loginForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+
+});
+    </script> }}
 {{> footer}}
